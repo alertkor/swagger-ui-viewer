@@ -13,7 +13,7 @@ def index():
 
 @app.route('/proxy')
 def proxy():
-    return requests.get(request.args.get('url')).content
+    return requests.get(request.args.get('url'), verify=False).content
 
 
 app.run(port=5001, use_reloader=True)
